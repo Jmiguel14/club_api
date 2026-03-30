@@ -25,10 +25,11 @@ test:
 production:
   primary:
     <<: *default
+    port: 6543
     database: postgres #club_production
-    username: postgres #<%= ENV["POSTGRES_USER"] %>
+    username: postgres.jotwqargxiqskebyytle #<%= ENV["POSTGRES_USER"] %>
     password: W8WWun2u/?WGn%e #<%= ENV["POSTGRES_PASSWORD"] %>
-    host: db.jotwqargxiqskebyytle.supabase.co #<%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    host: aws-1-us-east-2.pooler.supabase.com #<%= ENV.fetch("POSTGRES_HOST", "localhost") %>
   # cache:
   #   <<: *default
   #   database: club_production_cache
