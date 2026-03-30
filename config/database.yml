@@ -30,6 +30,7 @@ production:
     username: postgres.jotwqargxiqskebyytle #<%= ENV["POSTGRES_USER"] %>
     password: W8WWun2u/?WGn%e #<%= ENV["POSTGRES_PASSWORD"] %>
     host: aws-1-us-east-2.pooler.supabase.com #<%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    prepared_statements: false
   # cache:
   #   <<: *default
   #   database: club_production_cache
