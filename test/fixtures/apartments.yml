@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Apartment One
+  email: apartment_one@example.com
+  phone: "1111111111"
+
+two:
+  name: Apartment Two
+  email: apartment_two@example.com
+  phone: "2222222222"

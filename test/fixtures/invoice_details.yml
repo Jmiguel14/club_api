@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice: one
+  product: one
+  quantity: 1
+  unit_price: 9.99
+  point_cost: 0
+  type: product
+
+two:
+  invoice: two
+  product: two
+  quantity: 1
+  unit_price: 9.99
+  point_cost: 0
+  type: product
