@@ -26,29 +26,29 @@ production:
   primary:
     <<: *default
     port: 6543
-    database: postgres #club_production
-    username: postgres.jotwqargxiqskebyytle #<%= ENV["POSTGRES_USER"] %>
-    password: W8WWun2u/?WGn%e #<%= ENV["POSTGRES_PASSWORD"] %>
-    host: aws-1-us-east-2.pooler.supabase.com #<%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    database: <%= ENV["POSTGRES_DATABASE"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
     prepared_statements: false
-  # cache:
-  #   <<: *default
-  #   database: club_production_cache
-  #   username: <%= ENV["POSTGRES_USER"] %>
-  #   password: <%= ENV["POSTGRES_PASSWORD"] %>
-  #   host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
-  #   migrations_paths: db/cache_migrate
-  # queue:
-  #   <<: *default
-  #   database: club_production_queue
-  #   username: <%= ENV["POSTGRES_USER"] %>
-  #   password: <%= ENV["POSTGRES_PASSWORD"] %>
-  #   host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
-  #   migrations_paths: db/queue_migrate
-  # cable:
-  #   <<: *default
-  #   database: club_production_cable
-  #   username: <%= ENV["POSTGRES_USER"] %>
-  #   password: <%= ENV["POSTGRES_PASSWORD"] %>
-  #   host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
-    # migrations_paths: db/cable_migrate
+  cache:
+    <<: *default
+    database: <%= ENV["POSTGRES_DATABASE"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: <%= ENV["POSTGRES_DATABASE"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: <%= ENV["POSTGRES_DATABASE"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+    migrations_paths: db/cable_migrate
