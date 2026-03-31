@@ -16,8 +16,14 @@ class InvoiceDetail < ApplicationRecord
   before_validation :assign_default_unit_price, on: :create
   before_validation :coerce_fields_for_line_kind
 
-  def line_total
+  # Positive magnitude (qty × price or qty × points).
+  def line_magnitude
     quantity * (product? ? unit_price : point_cost)
+  end
+
+  # Net effect on invoice balance: club pays services (+), bar consumption (−).
+  def line_total
+    product? ? -line_magnitude : line_magnitude
   end
 
   private
