@@ -6,6 +6,11 @@ if [ -z "${LD_PRELOAD+x}" ]; then
     export LD_PRELOAD
 fi
 
+# Thruster listens on HTTP_PORT; Cloud Run (and similar) set PORT for inbound traffic.
+if [ -n "$PORT" ]; then
+  export HTTP_PORT="${HTTP_PORT:-$PORT}"
+fi
+
 # If running the rails server then create or migrate existing database
 if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
   ./bin/rails db:prepare
